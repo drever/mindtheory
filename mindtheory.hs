@@ -1,3 +1,5 @@
+import Environment 
+
 -- Innere perspektive 
 data AgentWorld = AgentWorld InnerWorld SelfModel
 data InnerWorld = InnerWorld WorldModel [InnerState]
@@ -25,7 +27,6 @@ type EffectOnWorld = String
 
 -- Aussenperspektive (Allwissende Perspektive des wissenschaftlichen Beobachters)
 data World = World Agent Environment
-type Environment = String
 
 data Agent = Agent [Actuator] [Sensor] BodyConfiguration AgentWorld
 data BodyConfiguration = BodyConfiguration String
