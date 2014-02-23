@@ -55,6 +55,12 @@ excavate x = x
 relateWithWorld :: String -> String
 relateWithWorld = undefined
 
+relateWithInnerWorld :: SelfModel -> InnerWorld -> (SelfModel, InnerWorld)
+relateWithInnerWorld = undefined
+
+relateWithOuterWorld :: SelfModel -> WorldModel -> (SelfModel, WorldModel)
+relateWithOuterWorld = undefined
+
 updateInnerWorld :: InnerWorld -> InnerWorld 
 updateInnerWorld = undefined
 
