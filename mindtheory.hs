@@ -18,9 +18,14 @@ type RestWorldModel = String
 
 
 type ActuatorActionModel = String
+type InnerActionModel = String
+type EffectOnInnerWorld = String
+type Action = String
+type EffectOnWorld = String
+
 -- Aussenperspektive (Allwissende Perspektive des wissenschaftlichen Beobachters)
 data World = World Agent Environment
-data Enviromment = Environment String
+type Environment = String
 
 data Agent = Agent [Actuator] [Sensor] BodyConfiguration AgentWorld
 data BodyConfiguration = BodyConfiguration String
@@ -42,7 +47,10 @@ feedbackMentalActivity = undefined
 --  1) Selbstmodell wird aus der Welt heraus geloest 
 --  2) Selbstmodell wird zur Umwelt in beziehung gesetzt
 mainProcess :: String -> String
-mainProcess x = relateWithWorld . excavate x
+mainProcess x = relateWithWorld $ excavate x
+
+excavate :: String -> String
+excavate x = x
 
 relateWithWorld :: String -> String
 relateWithWorld = undefined
@@ -65,3 +73,9 @@ excavateWorldActive = undefined
 -- Ausfuehrung
 
 -- Simulation von einem Zeitschritt
+
+--Main
+
+main = putStrLn "Brace yourself, SKYNET is comming to get you!"
+
+
