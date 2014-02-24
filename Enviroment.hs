@@ -1,5 +1,9 @@
 module Environment (
-    Environment (Wumpus)
+    Environment (..)
 ) where
 
-data Environment = Wumpus
+
+
+class Environment a where
+    bla :: a
+

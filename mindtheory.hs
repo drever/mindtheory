@@ -1,4 +1,4 @@
-import Environment 
+import Wumpus
 
 -- Innere perspektive 
 data AgentWorld = AgentWorld InnerWorld SelfModel
@@ -26,12 +26,14 @@ type Action = String
 type EffectOnWorld = String
 
 -- Aussenperspektive (Allwissende Perspektive des wissenschaftlichen Beobachters)
-data World = World Agent Environment
+data World = World Environment Agent 
 
-data Agent = Agent [Actuator] [Sensor] BodyConfiguration AgentWorld
+type  Environment = String
+
+data Agent = Agent [Actuator] [SensorState] BodyConfiguration AgentWorld
 data BodyConfiguration = BodyConfiguration String
 type Actuator = String
-type Sensor = String
+type SensorState = String
 
 -- Funktionen
 
@@ -82,6 +84,18 @@ excavateWorldActive = undefined
 -- Simulation von einem Zeitschritt
 
 --Main
+
+sense :: Agent -> Environment -> Agent
+sense  = undefined
+
+act :: Agent -> Environment -> Environment
+act = undefined
+
+simulationStep :: World -> World
+simulationStep (World env agent) = let 
+                newAgent = sense agent env
+                newEnv = act newAgent env
+            in World newEnv newAgent                 
 
 main = putStrLn "Brace yourself, SKYNET is comming to get you!"
 

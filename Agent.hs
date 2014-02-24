@@ -1,9 +1,8 @@
 module Agent (
-    Agent (WumpusAgent)
+    Agent (..)
 )
 where
 
-data WumpusPercept = Stench | Wind
-
-data Agent = WumpusAgent 
+class Agent a where
+    bla :: a
 
